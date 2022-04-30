@@ -33,6 +33,7 @@ EOT
 sudo mv $PROJECTNAME /etc/nginx/sites-available/
 sudo rm -rf /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/$PROJECTNAME /etc/nginx/sites-enabled/
+sudo rm -r /etc/nginx/sites-enabled/sites-available
 sudo nginx -t
 #starting nginx service and firewall
 sudo systemctl restart nginx.service
