@@ -36,8 +36,6 @@ reading_values "Insert the GIT_URL want to clone " GITURL;
 echo
 reading_values "Define the Branch you want to clone " BRNACHNAME;
 echo
-reading_values "Define the PHP Version you want to install (7.0,7.2,7.3,7.4,8 etc...)" VERSION;
-echo
 else
 echo
 repeat_reading "Insert the Project Name Correctly (same as the git repo name)..." ${red} ${clear}
@@ -62,15 +60,12 @@ fi
 echo "Confirm the below Values are enterd correct"
 echo "----------------------------------------------"
 #declear a array of Varaibles Name
-array1=(Project_Name Database_Name Database_Password Domain_Name Git_URL Branch_Name Version_Number);
-array2=($PROJECTNAME $DATABASENAME $DATABASEPASS $YOURDOMAIN $GITURL $BRNACHNAME $VERSION);
+array1=(Project_Name Database_Name Database_Password Domain_Name Git_URL Branch_Name);
+array2=($PROJECTNAME $DATABASENAME $DATABASEPASS $YOURDOMAIN $GITURL $BRNACHNAME);
 #do the looping of the function with arguments
-for (( i=0; i <7; i++ ))
+for (( i=0; i <8; i++ ))
     do
-    confirm_variables ${array1[#!/bin/bash
-# Set the repeat status of entry
-SET_STATUS=0;
-# Set the color variable]} ${yellow}${array2[i]}${clear}
+    confirm_variables ${array1[i]} ${yellow}${array2[i]}${clear}
 done
 echo 
 echo "Enter Yes to Confirm else enter No to Re-enter the Details..."
